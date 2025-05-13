@@ -60,90 +60,63 @@ checkWindowsSize();
 window.addEventListener('resize', checkWindowsSize);
 
 
-// -------------------- Modal Helpers --------------------
-function showModal(id) {
-    const modal = document.getElementById(id);
-    modal.classList.remove('hidden');
-    requestAnimationFrame(() => {
-        modal.classList.add('show');
-    });
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModal = document.getElementById("closeModal");
+  const formEquipo = document.getElementById("formEquipo");
+  const tablaEquipos = document.getElementById("tabla-equipos");
 
-function hideModal(id) {
-    const modal = document.getElementById(id);
-    modal.classList.remove('show');
-    setTimeout(() => {
-        modal.classList.add('hidden');
-    }, 300); // mismo tiempo que en CSS
-}
+  openModalBtn.onclick = () => {
+    modal.style.display = "block";
+  };
 
+  closeModal.onclick = () => {
+    modal.style.display = "none";
+  };
 
-// -------------------- Agregar Aula --------------------
-function openAddModal() {
-    showModal('addModal');
-}
+  window.onclick = (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
 
-document.getElementById('formAddAula').addEventListener('submit', function (e) {
+  formEquipo.addEventListener("submit", function (e) {
     e.preventDefault();
-    const nombre = document.getElementById('addNombreAula').value.trim();
-    const capacidad = document.getElementById('addCapacidad').value.trim();
 
-    if (!nombre || !capacidad) return;
+    const descripcion = document.getElementById("descripcion").value;
+    const marca = document.getElementById("marca").value;
+    const serie = document.getElementById("serie").value;
+    const patrimonio = document.getElementById("patrimonio").value;
+    const sala = document.getElementById("sala").value;
 
-    const tbody = document.querySelector('.aulas-table tbody');
-    const newRow = document.createElement('tr');
-    const newId = tbody.rows.length + 101;
-
-    newRow.innerHTML = `
-        <td>${newId}</td>
-        <td>${nombre}</td>
-        <td>${capacidad}</td>
-        <td>
-            <button class="btn-table btn-edit">Editar</button>
-            <button class="btn-table btn-delete">Eliminar</button>
-        </td>
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${descripcion}</td>
+      <td>${marca}</td>
+      <td>${serie}</td>
+      <td>${patrimonio}</td>
+      <td><span class="badge">Activo</span></td>
+      <td>
+        <button class="btn-editar">Editar</button>
+        <button class="btn-eliminar">Eliminar</button>
+      </td>
     `;
 
-    tbody.appendChild(newRow);
-    document.getElementById('formAddAula').reset();
-    hideModal('addModal');
-});
+    tablaEquipos.appendChild(row);
+    modal.style.display = "none";
+    formEquipo.reset();
 
-// -------------------- Editar y Eliminar Aulas --------------------
-let currentRowToEdit = null;
+    row.querySelector(".btn-eliminar").onclick = () => row.remove();
 
-document.querySelector('.aulas-table tbody').addEventListener('click', function (e) {
-    const row = e.target.closest('tr');
-    if (!row) return;
-
-    // Eliminar
-    if (e.target.classList.contains('btn-delete')) {
-        row.classList.add('fade-out');
-        setTimeout(() => row.remove(), 500);
-    }
-
-    // Editar
-    if (e.target.classList.contains('btn-edit')) {
-        currentRowToEdit = row;
-        const nombre = row.children[1].textContent;
-        const capacidad = row.children[2].textContent;
-
-        document.getElementById('nombreAula').value = nombre;
-        document.getElementById('capacidad').value = capacidad;
-
-        showModal('editModal');
-    }
-});
-
-document.querySelector('#editModal form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!currentRowToEdit) return;
-
-    const nuevoNombre = document.getElementById('nombreAula').value.trim();
-    const nuevaCapacidad = document.getElementById('capacidad').value.trim();
-
-    currentRowToEdit.children[1].textContent = nuevoNombre;
-    currentRowToEdit.children[2].textContent = nuevaCapacidad;
-
-    hideModal('editModal');
+    row.querySelector(".btn-editar").onclick = () => {
+      document.getElementById("descripcion").value = descripcion;
+      document.getElementById("marca").value = marca;
+      document.getElementById("serie").value = serie;
+      document.getElementById("patrimonio").value = patrimonio;
+      document.getElementById("sala").value = sala;
+      row.remove();
+      modal.style.display = "block";
+    };
+  });
 });

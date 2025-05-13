@@ -522,162 +522,115 @@ body {
       height: 30px;
     }
   }
-  /* Aulas Section */
-.aulas-section {
-    padding: 2rem;
-    margin: auto;
-    max-width: 1000px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
-/* Título de la sección */
-.section-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-/* Tabla de aulas */
-.aulas-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    border-radius: 8px;
+
+button.btn-agregar {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-/* Celdas de la tabla */
-.aulas-table th, .aulas-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
 }
 
-/* Cabecera de la tabla */
-.aulas-table th {
-    background-color: #eee;
+thead tr {
+  background-color: #eee;
+  text-align: left;
 }
 
-/* Estilo de los botones de la tabla */
-.btn-table {
-    background-color: #6477DB;
-    color: #fff;
-    padding: 0.4rem 0.8rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
 }
 
-.btn-table:hover {
-    background-color: #4e5fc9;
+.badge {
+  background-color: #a0f7a0;
+  color: #0c660c;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
-/* Modal */
+.btn-editar {
+  background-color: #3f80ff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background-color: #ff3f3f;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal.hidden {
-    display: none;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+  border-radius: 5px;
 }
 
-.modal-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Botones del modal */
-.btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.btn.confirm {
-    background-color: #6477DB;
-    color: #fff;
-}
-
-.btn.cancel {
-    background-color: #ccc;
-    color: #000;
-}
-
-/* Cabecera de la sección de aulas */
-.aulas-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-/* Botón de agregar */
-.btn-agregar {
-    background-color: #2bb673;
-    color: #fff;
-    padding: 0.6rem 1rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn-agregar:hover {
-    background-color: #239c61;
-}
-
-/* Botón de eliminar */
-.btn-delete {
-    background-color: #e74c3c;
-    margin-left: 0.5rem;
-}
-
-.btn-delete:hover {
-    background-color: #c0392b;
-}
-
-
-.fade-out {
-    animation: fadeOut 0.5s forwards;
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        transform: scale(0.95);
-        height: 0;
-        margin: 0;
-        padding: 0;
-    }
-}
-/* Transiciones suaves para modales */
-.modal {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-}
-
-.modal.show {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
 
 

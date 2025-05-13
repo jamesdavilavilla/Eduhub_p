@@ -149,77 +149,56 @@
         </div>
 
 
- <!-- Sección de Aulas -->
- <div class="aulas-section">
-    <div class="aulas-header">
-        <h2 class="section-title">Gestión de Aulas</h2>
-        <button class="btn-agregar" onclick="openAddModal()">Agregar Aula</button>
-    </div>
-    <table class="aulas-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Capacidad</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-  
-        </tbody>
+ <body>
+  <div class="container">
+    <button id="openModalBtn" class="btn-agregar">Agregar Equipo</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Descripcion</th>
+          <th>Marca</th>
+          <th>Número de série</th>
+          <th>Número de Patrimonio</th>
+          <th>Status</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-equipos">
+        <!-- Equipos agregados aparecerán aquí -->
+      </tbody>
     </table>
-</div>
-</section>
+  </div>
 
-<!-- Alert Box -->
-<div id="alertBox" class="modal hidden">
-<div class="modal-content">
-    <p>¿Estás seguro que deseas editar esta aula?</p>
-    <div class="modal-buttons">
-        <button onclick="confirmEdit()" class="btn confirm">Editar</button>
-        <button type="button" onclick="hideModal('addModal')" class="btn cancel">Cancelar</button>
-
-
-    </div>
-</div>
-</div>
-
-<!-- Modal Completo -->
-<div id="editModal" class="modal hidden">
-<div class="modal-content">
-    <h2>Editar Aula</h2>
-    <form>
-        <label for="nombreAula">Nombre del Aula</label>
-        <input type="text" id="nombreAula" placeholder="Ej. Aula 101" />
-        <label for="capacidad">Capacidad</label>
-        <input type="number" id="capacidad" placeholder="Ej. 30" />
-        <div class="modal-buttons">
-            <button type="submit" class="btn confirm">Guardar Cambios</button>
-            <button type="button" onclick="hideModal('editModal')" class="btn cancel">Cancelar</button>
-
-
-        </div>
-    </form>
-</div>
-</div>
-<!-- Modal Agregar Aula -->
-<div id="addModal" class="modal hidden">
+  <!-- Modal -->
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <h2>Agregar Aula</h2>
-      <form id="formAddAula">
-        <label for="addNombreAula">Nombre del Aula</label>
-        <input type="text" id="addNombreAula" placeholder="Ej. Aula 105" required />
-        <label for="addCapacidad">Capacidad</label>
-        <input type="number" id="addCapacidad" placeholder="Ej. 35" required />
-        <div class="modal-buttons">
-          <button type="submit" class="btn confirm">Agregar</button>
-          <button type="button" onclick="hideModal('addModal')" class="btn cancel">Cancelar</button>
+      <span id="closeModal" class="close">&times;</span>
+      <h3>Agregar Equipo</h3>
+      <form id="formEquipo">
+        <label>Descripcion de equipo</label>
+        <input type="text" id="descripcion" required />
 
+        <label>Marca</label>
+        <input type="text" id="marca" required />
 
-        </div>
+        <label>Número de série</label>
+        <input type="text" id="serie" required />
+
+        <label>Número de Patrimonio</label>
+        <input type="text" id="patrimonio" required />
+
+        <label>Salas</label>
+        <select id="sala" required>
+          <option value="Multimídia">Multimídia</option>
+          <option value="Redes de Computadores">Redes de Computadores</option>
+          <option value="Análise e Desenvolvimento">Análise e Desenvolvimento</option>
+        </select>
+
+        <button type="submit" class="btn-agregar">Agregar</button>
       </form>
     </div>
   </div>
+
   
 
     <script src="script.js"></script>

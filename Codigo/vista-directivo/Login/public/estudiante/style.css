@@ -523,7 +523,61 @@ body {
     }
   }
 
-  
+  /* === MODAL DE PERFIL DE ESTUDIANTE === */
+.perfil-visual {
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.perfil-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.perfil-contenido label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-contenido img#fotoEstudiante {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6477DB;
+  transition: 0.3s ease;
+}
+
+.cambiar-foto-texto {
+  font-size: 0.8rem;
+  color: #6477DB;
+  margin-top: 6px;
+  text-decoration: underline;
+}
+
+.datos-estudiante p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: var(--color-text-primary);
+}
+
+/* DARK MODE */
+body.dark-mode .perfil-visual {
+  background: #2b2b3c;
+}
+body.dark-mode .datos-estudiante p {
+  color: #fff;
+}
+body.dark-mode .cambiar-foto-texto {
+  color: #a3b5ff;
+}
+
 
 
 

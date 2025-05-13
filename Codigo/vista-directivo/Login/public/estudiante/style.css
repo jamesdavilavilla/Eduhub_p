@@ -628,3 +628,31 @@ body.dark-mode .cambiar-foto-texto {
     color: #fff;
   }
   
+/* === ESTILOS PARA BOTONES EDITAR Y ELIMINAR === */
+.btn-editar {
+  margin-left: 4px;
+  background-color: #4f5fb7;
+  color: #fff;
+}
+
+.btn-eliminar {
+  margin-left: 4px;
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+  opacity: 0.9;
+}
+
+/* DARK MODE para los nuevos botones */
+body.dark-mode .btn-editar {
+  background-color: #5a6bdc;
+  color: #fff;
+}
+
+body.dark-mode .btn-eliminar {
+  background-color: #c0392b;
+  color: #fff;
+}

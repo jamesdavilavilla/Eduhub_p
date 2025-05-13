@@ -211,6 +211,31 @@
     </div>
   </div>
   
+
+  <!-- === MODAL : DETALLE ESTUDIANTE (SOLO VISUAL CON CAMBIO DE FOTO) === -->
+<div id="modalDetalleEstudiante" class="modal hidden">
+  <div class="modal-content perfil-visual">
+    <h3>Perfil del Estudiante</h3>
+    <div class="perfil-contenido">
+      <label for="fotoPerfil">
+        <img id="fotoEstudiante" src="/resources/img/user.webp" alt="Foto Estudiante" />
+        <input type="file" id="fotoPerfil" accept="image/*" style="display: none;" />
+        <span class="cambiar-foto-texto">Cambiar foto</span>
+      </label>
+      <div class="datos-estudiante">
+        <p><strong>Nombre:</strong> <span id="verNombre"></span></p>
+        <p><strong>Correo:</strong> <span id="verCorreo"></span></p>
+        <p><strong>Curso:</strong> <span id="verCurso">10°A</span></p>
+      </div>
+    </div>
+    <div class="modal-actions" style="margin-top: 1rem; text-align: right;">
+      <button id="btnCerrarDetalle" class="btn-secondary">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+
+
     </section>
 
 

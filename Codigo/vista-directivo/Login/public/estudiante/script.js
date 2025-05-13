@@ -93,3 +93,65 @@ formAdd.addEventListener('submit',e=>{
   modalSuccess.classList.remove('hidden');
   formAdd.reset();
 });
+
+// Funcionalidad botón "Ver"
+tbody.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-secondary')) {
+    const row = e.target.closest('tr');
+    const nombre = row.children[0].textContent;
+    const correo = row.children[1].textContent;
+
+    document.getElementById('detalleNombre').value = nombre;
+    document.getElementById('detalleCorreo').value = correo;
+    document.getElementById('detalleCurso').value = '10°A'; // Simulado, puedes cambiarlo
+
+    document.getElementById('modalDetalleEstudiante').classList.remove('hidden');
+  }
+});
+
+document.getElementById('btnCerrarDetalle').addEventListener('click', () => {
+  document.getElementById('modalDetalleEstudiante').classList.add('hidden');
+});
+
+// Cambiar imagen de perfil
+document.getElementById('fotoPerfil').addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (evt) {
+      document.getElementById('fotoEstudiante').src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+// Abrir modal con datos del estudiante (no editable)
+tbody.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-secondary')) {
+    const row = e.target.closest('tr');
+    const nombre = row.children[0].textContent;
+    const correo = row.children[1].textContent;
+
+    document.getElementById('verNombre').textContent = nombre;
+    document.getElementById('verCorreo').textContent = correo;
+    document.getElementById('verCurso').textContent = '10°A'; // Simulado
+
+    document.getElementById('modalDetalleEstudiante').classList.remove('hidden');
+  }
+});
+
+// Cerrar modal
+document.getElementById('btnCerrarDetalle').addEventListener('click', () => {
+  document.getElementById('modalDetalleEstudiante').classList.add('hidden');
+});
+
+// Cambiar imagen de perfil
+document.getElementById('fotoPerfil').addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (evt) {
+      document.getElementById('fotoEstudiante').src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});

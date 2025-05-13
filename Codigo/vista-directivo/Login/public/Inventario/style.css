@@ -440,7 +440,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex:1;
+    margin-left: 10px;
     color: #333;
     transition: color 0.3s ease;
   }
@@ -494,7 +494,7 @@ body {
     border-radius: 50%;
   }
   .nav-bar-text {
-    flex:1; /* aumentá o disminuí según lo que necesites */
+    margin-left: 200px; /* aumentá o disminuí según lo que necesites */
 }
 
   /* === RESPONSIVE === */
@@ -522,90 +522,182 @@ body {
       height: 30px;
     }
   }
-
-  /* === MODAL DE PERFIL DE ESTUDIANTE === */
-.perfil-visual {
-  max-width: 420px;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
 }
 
-.perfil-contenido {
+.container {
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  justify-content: flex-end;
 }
 
-.perfil-contenido label {
+
+button.btn-agregar {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.perfil-contenido img#fotoEstudiante {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #6477DB;
-  transition: 0.3s ease;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
 }
 
-.cambiar-foto-texto {
-  font-size: 0.8rem;
-  color: #6477DB;
-  margin-top: 6px;
-  text-decoration: underline;
+thead tr {
+  background-color: #eee;
+  text-align: left;
 }
 
-.datos-estudiante p {
-  font-size: 0.95rem;
-  margin: 4px 0;
-  color: var(--color-text-primary);
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* DARK MODE */
-body.dark-mode .perfil-visual {
-  background: #2b2b3c;
-}
-body.dark-mode .datos-estudiante p {
-  color: #fff;
-}
-body.dark-mode .cambiar-foto-texto {
-  color: #a3b5ff;
+.badge {
+  background-color: #a0f7a0;
+  color: #0c660c;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
+.btn-editar {
+  background-color: #3f80ff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background-color: #ff3f3f;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
 
 
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #12141A;
+    color: #fff;
+}
 
-  .table-responsive{overflow-x:auto;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
-  .estudiantes-table{width:100%;border-collapse:collapse;}
-  .estudiantes-table th,.estudiantes-table td{padding:12px 16px;text-align:left;}
-  .estudiantes-table thead{background:#6477DB;color:#fff;}
-  .estudiantes-table tbody tr:nth-child(even){background:#f5f7ff;}
-  .btn-primary{background:#6477DB;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;transition:transform .2s ease;}
-  .btn-secondary{background:#ccc;color:#000;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;}
-  /* scale animation */
-  .scale-btn:active{transform:scale(0.95);}
-  /* modal basics */
-  .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;z-index:1000;}
-  .modal.hidden{display:none;}
-  .modal-content{background:#fff;padding:24px 32px;border-radius:8px;min-width:300px;animation:fadey .3s ease;}
-  @keyframes fadey{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
-  .form-group{display:flex;flex-direction:column;margin-bottom:12px;}
-  /* === DARK MODE OVERRIDES === */
-  body.dark-mode .table-responsive{background:#2b2b3c;}
-  body.dark-mode .estudiantes-table thead{background:#4f5fb7;color:#fff;}
-  body.dark-mode .estudiantes-table tbody tr{color:#fff;}
-  body.dark-mode .estudiantes-table tbody tr:nth-child(even){background:#35354a;}
-  body.dark-mode .modal-content{background:#2b2b3c;color:#fff;}
-  body.dark-mode label,body.dark-mode h3,body.dark-mode h2{color:#fff;}
-  body.dark-mode .btn-primary{background:#4f5fb7;color:#fff;}
-  body.dark-mode .btn-secondary{background:#555;color:#fff;}
-  
+/* Cambio de fondo de la sección */
+body.dark-mode .aulas-section {
+    background-color: #1e2328;
+}
+
+/* Cambios en la tabla */
+body.dark-mode .aulas-table {
+    background: #333;
+}
+
+body.dark-mode .aulas-table th {
+    background-color: #444;
+}
+
+body.dark-mode .aulas-table th, body.dark-mode .aulas-table td {
+    color: #ccc;
+    border-color: #555;
+}
+
+/* Botones en el modo oscuro */
+body.dark-mode .btn-table {
+    background-color: #6477DB;
+}
+
+body.dark-mode .btn-table:hover {
+    background-color: #4e5fc9;
+}
+
+body.dark-mode .modal-content {
+    background: #222;
+    color: #fff;
+}
+
+body.dark-mode .btn.confirm {
+    background-color: #6477DB;
+}
+
+body.dark-mode .btn.cancel {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .btn-agregar {
+    background-color: #2bb673;
+}
+
+body.dark-mode .btn-agregar:hover {
+    background-color: #239c61;
+}
+
+body.dark-mode .btn-delete {
+    background-color: #e74c3c;
+}
+
+body.dark-mode .btn-delete:hover {
+    background-color: #c0392b;
+}
+
   /* === DARK MODE TOGGLE BUTTON === */
   .dark-toggle {
     position: fixed;
@@ -628,31 +720,3 @@ body.dark-mode .cambiar-foto-texto {
     color: #fff;
   }
   
-/* === ESTILOS PARA BOTONES EDITAR Y ELIMINAR === */
-.btn-editar {
-  margin-left: 4px;
-  background-color: #4f5fb7;
-  color: #fff;
-}
-
-.btn-eliminar {
-  margin-left: 4px;
-  background-color: #e74c3c;
-  color: #fff;
-}
-
-.btn-editar:hover,
-.btn-eliminar:hover {
-  opacity: 0.9;
-}
-
-/* DARK MODE para los nuevos botones */
-body.dark-mode .btn-editar {
-  background-color: #5a6bdc;
-  color: #fff;
-}
-
-body.dark-mode .btn-eliminar {
-  background-color: #c0392b;
-  color: #fff;
-}

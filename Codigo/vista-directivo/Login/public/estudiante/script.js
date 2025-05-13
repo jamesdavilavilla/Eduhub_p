@@ -80,16 +80,129 @@ btnAddestudiante.addEventListener('click',()=>{
 btnCancelAdd.addEventListener('click',()=>modalAdd.classList.add('hidden'));
 btnSuccessOk.addEventListener('click',()=>modalSuccess.classList.add('hidden'));
 
-formAdd.addEventListener('submit',e=>{
+formAdd.addEventListener('submit', e => {
   e.preventDefault();
-  const nombre=document.getElementById('inpNombre').value.trim();
-  const apellido=document.getElementById('inpApellido').value.trim();
-  const correo=document.getElementById('inpCorreo').value.trim();
-  const estadoEl='<span style="background:#c6f6d5;color:#256029;padding:4px 10px;border-radius:12px;font-size:0.8rem;">Activo</span>';
-  const row=document.createElement('tr');
-  row.innerHTML=`<td>${nombre} ${apellido}</td><td>${correo}</td><td>${estadoEl}</td><td><button class='btn-secondary'>Ver</button></td>`;
+  const nombre = document.getElementById('inpNombre').value.trim();
+  const apellido = document.getElementById('inpApellido').value.trim();
+  const correo = document.getElementById('inpCorreo').value.trim();
+  const estadoEl = '<span style="background:#c6f6d5;color:#256029;padding:4px 10px;border-radius:12px;font-size:0.8rem;">Activo</span>';
+
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${nombre} ${apellido}</td>
+    <td>${correo}</td>
+    <td>${estadoEl}</td>
+    <td>
+      <button class='btn-secondary btn-ver'>Ver</button>
+      <button class='btn-primary btn-editar'>Editar</button>
+      <button class='btn-secondary btn-eliminar'>Eliminar</button>
+    </td>
+  `;
   tbody.appendChild(row);
+
   modalAdd.classList.add('hidden');
   modalSuccess.classList.remove('hidden');
   formAdd.reset();
+});
+
+
+
+
+// Cambiar imagen de perfil
+document.getElementById('fotoPerfil').addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (evt) {
+      document.getElementById('fotoEstudiante').src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+// Abrir modal con datos del estudiante (no editable)
+tbody.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-secondary')) {
+    const row = e.target.closest('tr');
+    const nombre = row.children[0].textContent;
+    const correo = row.children[1].textContent;
+
+    document.getElementById('verNombre').textContent = nombre;
+    document.getElementById('verCorreo').textContent = correo;
+    document.getElementById('verCurso').textContent = '10°A'; // Simulado
+
+    document.getElementById('modalDetalleEstudiante').classList.remove('hidden');
+  }
+});
+
+// Cerrar modal
+document.getElementById('btnCerrarDetalle').addEventListener('click', () => {
+  document.getElementById('modalDetalleEstudiante').classList.add('hidden');
+});
+
+// Cambiar imagen de perfil
+document.getElementById('fotoPerfil').addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (evt) {
+      document.getElementById('fotoEstudiante').src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+tbody.addEventListener('click', function (e) {
+  const row = e.target.closest('tr');
+
+  // VER
+  if (e.target.classList.contains('btn-ver')) {
+    const nombre = row.children[0].textContent;
+    const correo = row.children[1].textContent;
+    document.getElementById('verNombre').textContent = nombre;
+    document.getElementById('verCorreo').textContent = correo;
+    document.getElementById('verCurso').textContent = '10°A'; // Simulado
+    document.getElementById('modalDetalleEstudiante').classList.remove('hidden');
+  }
+
+  // ELIMINAR
+  if (e.target.classList.contains('btn-eliminar')) {
+    if (confirm('¿Seguro que quieres eliminar este estudiante?')) {
+      row.remove();
+    }
+  }
+
+  // EDITAR
+  if (e.target.classList.contains('btn-editar')) {
+    const nombreCompleto = row.children[0].textContent.split(' ');
+    const correo = row.children[1].textContent;
+
+    document.getElementById('inpNombre').value = nombreCompleto[0] || '';
+    document.getElementById('inpApellido').value = nombreCompleto[1] || '';
+    document.getElementById('inpCorreo').value = correo;
+    document.getElementById('inpPass').value = ''; // Vacio para editar manual
+
+    modalAdd.classList.remove('hidden');
+
+    // Al editar, eliminamos la fila vieja cuando se confirme
+    formAdd.onsubmit = function (e) {
+      e.preventDefault();
+      const nuevoNombre = document.getElementById('inpNombre').value.trim();
+      const nuevoApellido = document.getElementById('inpApellido').value.trim();
+      const nuevoCorreo = document.getElementById('inpCorreo').value.trim();
+
+      row.innerHTML = `
+        <td>${nuevoNombre} ${nuevoApellido}</td>
+        <td>${nuevoCorreo}</td>
+        <td><span style="background:#c6f6d5;color:#256029;padding:4px 10px;border-radius:12px;font-size:0.8rem;">Activo</span></td>
+        <td>
+          <button class='btn-secondary btn-ver'>Ver</button>
+          <button class='btn-primary btn-editar'>Editar</button>
+          <button class='btn-secondary btn-eliminar'>Eliminar</button>
+        </td>
+      `;
+      modalAdd.classList.add('hidden');
+      modalSuccess.classList.remove('hidden');
+      formAdd.reset();
+      formAdd.onsubmit = null; // restaurar comportamiento
+    };
+  }
 });

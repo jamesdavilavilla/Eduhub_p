@@ -149,97 +149,58 @@
         </div>
 
 
+ <body>
+  <div class="container">
+    <button id="openModalBtn" class="btn-agregar">Agregar Equipo</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Descripcion</th>
+          <th>Marca</th>
+          <th>Número de série</th>
+          <th>Número de Patrimonio</th>
+          <th>Status</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-equipos">
+        <!-- Equipos agregados aparecerán aquí -->
+      </tbody>
+    </table>
+  </div>
 
-
-        <!-- === ESTUDIANTES TABLE SECTION (insert below navigation) === -->
-<section id="estudiantes" style="padding:2rem 3rem;">
-    <div class="estudiantes-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-      <h2>Estudiantes</h2>
-      <button id="btnAddestudiante" class="btn-primary">Agregar Estudiante</button>
-    </div>
-    <div class="table-responsive">
-      <table class="estudiantes-table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Estado</th>
-            <th>Acción</th>
-          </tr>
-        </thead>
-        <tbody id="tbodyestudiante">
-          <!-- Dynamic rows here -->
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-  <!-- === MODAL : ADD DOCENTE === -->
-  <div id="modalAddestudiante" class="modal hidden">
+  <!-- Modal -->
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <h3>Registrar Estudiante</h3>
-      <form id="formAddestudiante">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" id="inpNombre" required />
-        </div>
-        <div class="form-group">
-          <label>Apellido</label>
-          <input type="text" id="inpApellido" required />
-        </div>
-        <div class="form-group">
-          <label>Correo</label>
-          <input type="email" id="inpCorreo" required />
-        </div>
-        <div class="form-group">
-          <label>Contraseña</label>
-          <input type="password" id="inpPass" required />
-        </div>
-        <div class="modal-actions">
-          <button type="submit" class="btn-primary">Confirmar</button>
-          <button type="button" id="btnCancelAdd" class="btn-secondary">Cancelar</button>
-        </div>
+      <span id="closeModal" class="close">&times;</span>
+      <h3>Agregar Equipo</h3>
+      <form id="formEquipo">
+        <label>Descripcion de equipo</label>
+        <input type="text" id="descripcion" required />
+
+        <label>Marca</label>
+        <input type="text" id="marca" required />
+
+        <label>Número de série</label>
+        <input type="text" id="serie" required />
+
+        <label>Número de Patrimonio</label>
+        <input type="text" id="patrimonio" required />
+
+        <label>Salas</label>
+        <select id="sala" required>
+          <option value="Multimídia">Multimídia</option>
+          <option value="Redes de Computadores">Redes de Computadores</option>
+          <option value="Análise e Desenvolvimento">Análise e Desenvolvimento</option>
+        </select>
+
+        <button type="submit" class="btn-agregar">Agregar</button>
       </form>
     </div>
   </div>
+
   
-  <!-- === MODAL : SUCCESS === -->
-  <div id="modalSuccess" class="modal hidden">
-    <div class="modal-content">
-      <h3>¡Registrado con éxito!</h3>
-      <button id="btnSuccessOk" class="btn-primary">OK</button>
-    </div>
-  </div>
-  
-
-  <!-- === MODAL : DETALLE ESTUDIANTE (SOLO VISUAL CON CAMBIO DE FOTO) === -->
-<div id="modalDetalleEstudiante" class="modal hidden">
-  <div class="modal-content perfil-visual">
-    <h3>Perfil del Estudiante</h3>
-    <div class="perfil-contenido">
-      <label for="fotoPerfil">
-        <img id="fotoEstudiante" src="/resources/img/user.webp" alt="" />
-        <input type="file" id="fotoPerfil" accept="image/*" style="display: none;" />
-        <span class="cambiar-foto-texto">Cambiar foto</span>
-      </label>
-      <div class="datos-estudiante">
-        <p><strong>Nombre:</strong> <span id="verNombre"></span></p>
-        <p><strong>Correo:</strong> <span id="verCorreo"></span></p>
-        <p><strong>Curso:</strong> <span id="verCurso">10°A</span></p>
-      </div>
-    </div>
-    <div class="modal-actions" style="margin-top: 1rem; text-align: right;">
-      <button id="btnCerrarDetalle" class="btn-secondary">Cerrar</button>
-    </div>
-  </div>
-</div>
-
-
-
-    </section>
-
 
     <script src="script.js"></script>
-
 </body>
 </html>

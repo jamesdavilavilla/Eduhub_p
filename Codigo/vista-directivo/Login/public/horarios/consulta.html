@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="menu-btn sidebar-btn" id="sidebar-btn">
+        <i class='bx bx-menu'></i>
+        <i class='bx bx-x'></i>
+    </div>
+    <div class="dark-mode-btn" id="dark-mode-btn">
+        <i class='bx bx-moon'></i>
+        <i class='bx bx-sun'></i>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="header">
+            <div class="menu-btn" id="menu-btn">
+                <i class='bx bx-chevron-left'></i>
+            </div>
+            <div class="brand">
+                <img class="brand-light" src="/brand/brand-light.png" alt="logo">
+                <img class="brand-dark" src="/brand/brand-dark.png" alt="logo">
+                <span>Eduhub</span>
+            </div>
+        </div>
+        <div class="menu-container">
+            <ul class="menu">
+                <li class="menu-item menu-item-static active">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-home-alt-2'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-library'></i>
+                        <span>Informes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Horarios</a></li>
+                        <li><a href="#" class="sub-menu-link">Reportes Academicos</a></li>
+                        <li><a href="#" class="sub-menu-link">Asistencia</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bxs-map-alt'></i>
+                        <span>Cursos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Cursos</a></li>
+                        <li><a href="#" class="sub-menu-link">Materias</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-message-dots'></i>
+                        <span>Comunicacion</span>
+                        <i class='bx bx-chevron-down'></i>  
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Comunicados</a></li>
+                        <li><a href="#" class="sub-menu-link">Publicar</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Estudiantes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Consulta</a></li>
+                        <li><a href="#" class="sub-menu-link">Actualizacion</a></li>
+                        <li href="#" class="sub-menu-link">Reportes</li>
+                        <li href="#" class="sub-menu-link">Registrar</li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Docentes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Consulta</a></li>
+                        <li><a href="#" class="sub-menu-link">Actualizacion</a></li>
+                        <li><a href="#" class="sub-menu-link">Gestion</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bxs-school'></i>
+                        <span>Recursos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Inventario</a></li>
+                        <li><a href="#" class="sub-menu-link">Aulas</a></li>
+ 
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="menu">
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-bell'></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="user">
+                <div class="user-img">
+                    <img src="/user.webp" alt="user">
+                </div>
+                <div class="user-data">
+                    <span class="name">james</span>
+                    <span class="email">asd@gmail.com</span>
+                </div>
+                <div class="user-icon">
+                    <i class='bx bx-exit'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="nav-bar-text">
+                    <i class="far fa-search"></i>
+                    <img src="brand/brand-light.png" alt="">
+                    <h3>Sistema De Gestion EDU HUB</h3>
+                </div>
+                <div class="profile">
+                    <i class=" far fa-bell"></i>
+                    <img src="user.webp" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <h1>Gestión de horarios</h1>
+        <div class="schedule-controls">
+            <button class="schedule-btn" onclick="window.location.href='../horarios/Consulta'">Consulta</button>
+            <button class="schedule-btn" onclick="window.location.href='../horarios/agregar_horarios.html'">Agregar Horario</button>
+            <button class="schedule-btn">Editar/Eliminar</button>
+        </div>
+        <div class="schedule-container">
+            <div class="schedule-grid">
+                <div class="schedule-header">
+                    <div class="time-column"></div>
+                    <div>Lunes</div>
+                    <div>Martes</div>
+                    <div>Miércoles</div>
+                    <div>Jueves</div>
+                    <div>Viernes</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time-column">6:40 am</div>
+                    <div class="schedule-item red">Matemática<br>Aula 204<br>Prof. Gómez</div>
+                    <div class="schedule-item green">Física<br>Aula 102<br>Prof. García</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item orange">Sociales<br>Aula 403<br>Prof. Pérez</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time-column">8:20 am</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item purple">Historia<br>Aula 205<br>Prof. Ruiz</div>
+                    <div class="schedule-item teal">Inglés<br>Aula 104<br>Prof. López</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item empty"></div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time-column">9:20 am</div>
+                    <div class="schedule-item yellow">Química<br>Aula 303<br>Prof. Melo</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item orange">Sociales<br>Aula 403<br>Prof. Pérez</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item gray">Español<br>Aula 501<br>Prof. Torres</div>
+                </div>
+                <div class="schedule-row">
+                    <div class="time-column">10:30 am</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item blue">Español<br>Aula 502<br>Prof. Torres</div>
+                    <div class="schedule-item empty"></div>
+                    <div class="schedule-item pink">Matemática<br>Aula 204<br>Prof. Gómez</div>
+                    <div class="schedule-item empty"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-section">
+            <h2>Registrar horario</h2>
+        </div>
+
+    </section>
+
+    <script src="javacript.js"></script>
+</body>
+</html>

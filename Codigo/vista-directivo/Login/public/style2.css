@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+*{
+  font-family: "Poppins", sans-serif;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin Condensed', sans-serif;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1C1678, #3E2C90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Contenedor general */
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    background-color: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  /* Contenedor de formularios */
+  .forms-container {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Logo */
+  .logo-img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  
+  /* Formulario */
+  .sign-in-form {
+    width: 100%;
+    max-width: 350px;
+    background-color: #d1c7c7;
+    padding: 30px;
+    margin-left: 70px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1C1678;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Inputs */
+  input[type="email"],
+  input[type="password"],
+  .code-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.75rem;
+    outline: none;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  .code-input:focus {
+    border-color: #8576FF;
+  }
+  
+  /* Código de verificación */
+  .codigo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+  }
+  
+  .code-input {
+    width: 2.7rem;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding: 0 0.5rem;
+  }
+  
+  /* Botón */
+  .btn {
+    background-color: #3E2C90;
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1C1678;
+  }
+  
+  /* Texto de pie de formulario */
+  .footer-text {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer-text a {
+    color: #3E2C90;
+    text-decoration: none;
+  }
+  
+  .footer-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Imagen lateral */
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .content {
+      order: -1;
+      padding: 1.5rem;
+    }
+  
+    .image {
+      max-width: 100%;
+    }
+  
+    .forms-container {
+      padding: 2rem;
+    }
+  }
+}

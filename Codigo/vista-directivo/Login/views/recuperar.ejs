@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperar Contraseña - EduHub</title>
+  <link rel="stylesheet" href="resources/style2.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="logo">
+        <img src="resources/img/Logo Principal.png" alt="EduHub Logo" class="logo-img">
+      </div>
+      <div class="signin">
+        <form id="restablecerForm" class="sign-in-form">
+          <h2 class="title">Recuperar Contraseña</h2>
+          <div class="email">
+            <input type="email" id="email" placeholder="Correo" />
+          </div>
+          <div class="codigo">
+            <label for="codigo" class="form-label">Código de Verificación:</label>
+            <div class="code-inputs">
+              <input type="text" class="code-input" maxlength="1" />
+              <input type="text" class="code-input" maxlength="1" />
+              <input type="text" class="code-input" maxlength="1" />
+              <span class="separator">-</span>
+              <input type="text" class="code-input" maxlength="1" />
+              <input type="text" class="code-input" maxlength="1" />
+              <input type="text" class="code-input" maxlength="1" />
+            </div>
+          </div>
+          <div class="password">
+            <input type="password" id="nueva-password" placeholder="Nueva contraseña" />
+          </div>
+          <div class="password">
+            <input type="password" id="confirmar-password" placeholder="Confirma tu contraseña" />
+          </div>
+          <input type="submit" value="Restablecer" class="btn solid" />
+          <p class="footer-text">¿No recibiste el Código? <a href="#">Volver a Enviar</a></p>
+        </form>
+      </div>
+    </div>
+    <div class="content">
+      <img src="resources/img/Group 364.png" class="image" alt="Imagen de recuperación" />
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript">
+  document.getElementById('restablecerForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita el envío por defecto
+
+    // Captura de valores del formulario
+    const email = document.getElementById('email').value.trim();
+    const codigoInputs = document.querySelectorAll('.code-input');
+    const nuevaPassword = document.getElementById('nueva-password').value.trim();
+    const confirmarPassword = document.getElementById('confirmar-password').value.trim();
+
+    // Unir los 6 inputs del código en una sola cadena
+    let codigo = '';
+    codigoInputs.forEach(input => codigo += input.value.trim());
+
+    // Validación de campos vacíos
+    if (email === '' || codigo.length < 6 || nuevaPassword === '' || confirmarPassword === '') {
+      alert('Faltan datos por rellenar');
+      return;
+    }
+
+    // Validación de coincidencia de contraseñas
+    if (nuevaPassword !== confirmarPassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+
+    // Validación de longitud mínima
+    if (nuevaPassword.length < 8) {
+      alert('La contraseña debe tener al menos 8 caracteres');
+      return;
+    }
+
+    // Validación de seguridad (mayúscula, número y carácter especial)
+    const regexSeguridad = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/;
+    if (!regexSeguridad.test(nuevaPassword)) {
+      alert('La contraseña debe tener al menos:\n- Una letra mayúscula\n- Un número\n- Un carácter especial');
+      return;
+    }
+
+    // Si todo está bien
+    alert('Formulario enviado correctamente');
+    // Aquí podrías enviar los datos al servidor con fetch() o permitir el envío:
+    // this.submit();
+  });
+</script>
+
+
+
+
+
+
+
+</html>

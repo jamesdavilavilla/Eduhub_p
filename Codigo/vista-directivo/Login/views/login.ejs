@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login EduHub</title>
+    <link rel="stylesheet" href="resources/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="logo">
+          <img src="resources/img/Logo Principal.png" alt="EduHub Logo" class="logo-img">
+        </div>
+        <div class="signin">
+          <form id="sign-in-form" action="/auth" method="post" class="sign-in-form">
+            <h2 class="title">Iniciar Sesión</h2>
+            <div class="email">
+              <input type="email" name="email" id="email" placeholder="Correo" />
+            </div>
+            <div class="password">
+              <input type="password" name="pass" id="password" placeholder="Contraseña" />
+            </div>
+            <div class="forgot">
+              <a href="/recuperar">¿Olvidaste tu contraseña?</a>
+            </div>
+            <input type="submit" value="Inicia sesión" class="btn solid" />
+          </form>
+        </div>
+      </div>
+      <div class="content">
+        <img src="resources/img/Login_image.png" class="image" alt="" />
+      </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<% if(typeof alert != "undefined") { %>
+  <script>
+      Swal.fire({
+        title: '<%= alertTitle %>',
+        text: '<%= alertMessage %>',
+        icon: '<%= alertIcon %>',
+        showConfirmButton: <%= showConfirmButton %>,
+        timer: <%= timer %>
+      }).then(()=>{
+        window.location='/<%= ruta %>'
+      })
+  </script> 
+  
+<% } %>
+
+  </body>
+
+
+</html>

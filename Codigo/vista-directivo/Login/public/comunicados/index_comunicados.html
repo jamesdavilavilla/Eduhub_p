@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="menu-btn sidebar-btn" id="sidebar-btn">
+        <i class='bx bx-menu'></i>
+        <i class='bx bx-x'></i>
+    </div>
+    <div class="dark-mode-btn" id="dark-mode-btn">
+        <i class='bx bx-moon'></i>
+        <i class='bx bx-sun'></i>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="header">
+            <div class="menu-btn" id="menu-btn">
+                <i class='bx bx-chevron-left'></i>
+            </div>
+            <div class="brand">
+                <img class="brand-light" src="/assets/img/brand-light.png" alt="logo">
+                <img class="brand-dark" src="/assets/img/brand-dark.png" alt="logo">
+                <span>Eduhub</span>
+            </div>
+        </div>
+        <div class="menu-container">
+            <ul class="menu">
+                <li class="menu-item menu-item-static active">
+                    <a href="/resources/dashboard/index_dashboard.html" class="menu-link">
+                        <i class='bx bx-home-alt-2'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-library'></i>
+                        <span>Informes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Horarios</a></li>
+                        <li><a href="#" class="sub-menu-link">Reportes Academicos</a></li>
+                        <li><a href="#" class="sub-menu-link">Asistencia</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bxs-map-alt'></i>
+                        <span>Cursos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/Cursos/index-cursos.html" class="sub-menu-link">Cursos</a></li>
+                        <li><a href="/resources/Cursos/index-materias.html" class="sub-menu-link">Materias</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-message-dots'></i>
+                        <span>Comunicacion</span>
+                        <i class='bx bx-chevron-down'></i>  
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/comunicados/index_comunicados.html" class="sub-menu-link">Comunicados</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Estudiantes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/estudiante/index_estudiante.html" class="sub-menu-link">Consulta</a></li>
+                        <li href="#" class="sub-menu-link">Reportes</li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Docentes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/docente/index_profesor.html" class="sub-menu-link">Consulta</a></li>
+                        <li><a href="#" class="sub-menu-link">Gestion</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bxs-school'></i>
+                        <span>Recursos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Inventario</a></li>
+                        <li><a href="/resources/aulas/index_aulas.html" class="sub-menu-link">Aulas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="menu">
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-bell'></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="user">
+                <div class="user-img">
+                    <img src="/resources/img/user.webp" alt="user">
+                </div>
+                <div class="user-data">
+                    <span class="name">EDUHUB</span>
+                    <span class="email">Eduhub@gmail.com</span>
+                </div>
+                <div class="user-icon">
+                    <i class='bx bx-exit'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="nav-bar-text">
+                    <i class="far fa-search"></i>
+                    <img src="/resources/img/brand-light.png" alt="">
+                    <h3>Sistema De Gestion EDU HUB</h3>
+                </div>
+                <div class="profile">
+                    <i class=" far fa-bell"></i>
+                    <img src="/resources/img/user.webp" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- COMUNICADOS -->
+<div class="comunicados-wrapper" style="padding: 2rem;">
+    <div class="flex justify-between items-center mb-6">
+      <h2 style="font-weight: 700; font-size: 1.5rem; color: var(--color-text-primary);">Comunicados</h2>
+      <button id="openModalBtn" style="background: var(--color-bg); color: var(--color-text-primary); border: 1px solid var(--color-border); padding: 0.5rem 1.5rem; border-radius: 12px; font-weight: 600;">Crear Post</button>
+    </div>
+  
+    <!-- Post fijo de ejemplo -->
+    <div style="background: var(--color-surface); padding: 1rem; border-radius: 12px; box-shadow: 0 2px 8px var(--shadow-border); max-width: 800px;">
+      <img src="/resources/img/user.webp" alt="Post image" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+      <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.5;">
+        🎉🎤 <strong>¡Feliz cumpleaños, Natanael Cano! 🎉🎤</strong><br>
+        Hoy se celebra el nacimiento de un artista que revolucionó los corridos tumbados y llevó su música a lo más alto. 🌟 Que este día esté lleno de alegría, buena vibra y mucho éxito.
+        Gracias por inspirar con tu talento y por seguir rompiéndola en cada rola.<br><br>
+        ¡Que vengan más éxitos, más música y más bendiciones! 💌🎶 Disfruta tu día al máximo.
+      </p>
+      <div style="text-align: right; font-size: 0.75rem; color: var(--color-border); margin-top: 0.5rem;">Posteado 2-04-2025</div>
+    </div>
+  </div>
+  
+  <!-- MODAL -->
+  <div id="crearPostModal" class="modal-post" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000; align-items: center; justify-content: center;">
+    <div style="background: var(--color-surface); border-radius: 12px; padding: 2rem; width: 90%; max-width: 800px; box-shadow: 0 10px 25px var(--shadow-border); position: relative;">
+      <div class="flex justify-between items-center mb-4">
+        <h3 style="color: var(--color-text-primary); font-weight: 700;">Crear Post</h3>
+        <button id="closeModalBtn" style="font-size: 1.2rem; background: transparent; border: none; color: var(--color-text-secondary);">✖</button>
+      </div>
+      <label style="color: var(--color-text-secondary); font-weight: 600;">¿Cuál será tu nuevo comunicado?</label>
+      <textarea rows="6" style="width: 100%; padding: 1rem; margin-top: 1rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-text-primary); resize: none;"></textarea>
+      <div class="flex justify-between mt-4">
+        <label style="padding: 0.5rem 1.5rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 10px; color: var(--color-text-primary); cursor: pointer;">
+          Anexar Imagen
+          <input type="file" id="imagenInput" accept="image/*" style="display: none;">
+        </label>
+        <button id="publicarBtn" style="padding: 0.5rem 1.5rem; background: #8ae68a; border-radius: 10px; font-weight: bold; color: #000;">Publicar Comunicado</button>
+      </div>
+      
+    </div>
+  </div>
+  
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

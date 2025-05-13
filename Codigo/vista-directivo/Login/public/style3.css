@@ -1,0 +1,180 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body general */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1C1678, #3E2C90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  /* Parte izquierda: formulario */
+  .forms-container {
+    flex: 1;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+  
+  .logo img {
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+  
+  .logo-img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  
+  /* Estilo del formulario */
+  .sign-in-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #d1c7c7;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    color: #1C1678;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .email, .password, .username, .rol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f0f0ff;
+    border-radius: 8px;
+    padding: 10px 15px;
+  }
+  
+  .email input, .password input, .username input, .rol input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .forgot {
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  
+  .forgot a {
+    color: #3E2C90;
+    text-decoration: none;
+  }
+  
+  .forgot a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botón */
+  .btn {
+    background: #1C1678;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #2d25b9;
+  }
+  
+  /* Parte derecha: imagen */
+  .content {
+    flex: 1;
+    background: #f6f6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .content .image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      border-radius: 0;
+      height: 100%;
+    }
+  
+    .forms-container, .content {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .sign-in-form {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .btn {
+      font-size: 1rem;
+    }
+  }
+
+
+  .select-css {
+  display: block; 
+  font-size: 16px;
+  font-weight: 400; 
+  line-height: 1.3;
+  padding: .4em 1.4em .3em .8em; 
+  width: 400px;
+  max-width: 100%;
+  box-sizing: border-box; 
+  margin:0;
+  background-color: #f5f5f5;
+  }
+  

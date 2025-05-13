@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar EduHub</title>
+    <link rel="stylesheet" href="resources/style3.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="logo">
+          <img src="resources/img/Logo Principal.png" alt="EduHub Logo" class="logo-img" />
+        </div>
+        <div class="signin">
+          <form id="sign-in-form" action="/register" method="post" class="sign-in-form">
+            <h2 class="title">Registrar Nuevo Directivo</h2>
+
+            <div class="email">
+              <input type="email" name="email" id="email" placeholder="Correo" required />
+            </div>
+
+            <div class="password">
+              <input type="password" name="pass" id="password" placeholder="Contraseña" required />
+            </div>
+
+            <div class="username">
+              <input type="text" name="user" id="username" placeholder="Nombre de Usuario" required />
+            </div>
+
+            <div class="rol">
+              <select name="rol" id="rol" class="select-css" required>
+                <option value="" disabled selected>Selecciona un rol</option>
+                <option value="Directivo">Directivo</option>
+                <option value="Profesor">Profesor</option>
+                <option value="Estudiante">Estudiante</option>
+              </select>
+            </div>
+
+              <input type="submit" value="Registrar" class="btn solid" />
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if(typeof alert != "undefined") { %>
+      <script>
+          Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %>,
+            timer: <%= timer %>
+          }).then(()=>{
+            window.location='/admin <%= ruta %>'
+          })
+      </script> 
+      
+    <% } %>
+
+  </body>
+</html>

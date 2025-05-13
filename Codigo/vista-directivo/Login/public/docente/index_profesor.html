@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="menu-btn sidebar-btn" id="sidebar-btn">
+        <i class='bx bx-menu'></i>
+        <i class='bx bx-x'></i>
+    </div>
+    <div class="dark-mode-btn" id="dark-mode-btn">
+        <i class='bx bx-moon'></i>
+        <i class='bx bx-sun'></i>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="header">
+            <div class="menu-btn" id="menu-btn">
+                <i class='bx bx-chevron-left'></i>
+            </div>
+            <div class="brand">
+                <img class="brand-light" src="/assets/img/brand-light.png" alt="logo">
+                <img class="brand-dark" src="/assets/img/brand-dark.png" alt="logo">
+                <span>Eduhub</span>
+            </div>
+        </div>
+        <div class="menu-container">
+            <ul class="menu">
+                <li class="menu-item menu-item-static active">
+                    <a href="/resources/dashboard/index_dashboard.html" class="menu-link">
+                        <i class='bx bx-home-alt-2'></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-library'></i>
+                        <span>Informes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Horarios</a></li>
+                        <li><a href="#" class="sub-menu-link">Reportes Academicos</a></li>
+                        <li><a href="#" class="sub-menu-link">Asistencia</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bxs-map-alt'></i>
+                        <span>Cursos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/Cursos/index-cursos.html" class="sub-menu-link">Cursos</a></li>
+                        <li><a href="/resources/Cursos/index-materias.html" class="sub-menu-link">Materias</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-message-dots'></i>
+                        <span>Comunicacion</span>
+                        <i class='bx bx-chevron-down'></i>  
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/comunicados/index_comunicados.html" class="sub-menu-link">Comunicados</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Estudiantes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/estudiante/index_estudiante.html" class="sub-menu-link">Consulta</a></li>
+                        <li href="#" class="sub-menu-link">Reportes</li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-user'></i>
+                        <span>Docentes</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="/resources/docente/index_profesor.html" class="sub-menu-link">Consulta</a></li>
+                        <li><a href="#" class="sub-menu-link">Gestion</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-dropdown">
+                    <a href="#" class="menu-link">
+                        <i class='bx bxs-school'></i>
+                        <span>Recursos</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link">Inventario</a></li>
+                        <li><a href="/resources/aulas/index_aulas.html" class="sub-menu-link">Aulas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <ul class="menu">
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-bell'></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-static">
+                    <a href="#" class="menu-link">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="user">
+                <div class="user-img">
+                    <img src="/resources/img/user.webp" alt="user">
+                </div>
+                <div class="user-data">
+                    <span class="name">EDUHUB</span>
+                    <span class="email">Eduhub@gmail.com</span>
+                </div>
+                <div class="user-icon">
+                    <i class='bx bx-exit'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="nav-bar-text">
+                    <i class="far fa-search"></i>
+                    <img src="/resources/img/brand-light.png" alt="">
+                    <h3>Sistema De Gestion EDU HUB</h3>
+                </div>
+                <div class="profile">
+                    <i class=" far fa-bell"></i>
+                    <img src="/resources/img/user.webp" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- === DOCENTES TABLE SECTION (insert below navigation) === -->
+<section id="docentes" style="padding:2rem 3rem;">
+    <div class="docentes-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+      <h2>Docentes</h2>
+      <button id="btnAddDocente" class="btn-primary">Agregar Docente</button>
+    </div>
+    <div class="table-responsive">
+      <table class="docentes-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyDocentes">
+          <!-- Dynamic rows here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <!-- === MODAL : ADD DOCENTE === -->
+  <div id="modalAddDocente" class="modal hidden">
+    <div class="modal-content">
+      <h3>Registrar Docente</h3>
+      <form id="formAddDocente">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" id="inpNombre" required />
+        </div>
+        <div class="form-group">
+          <label>Apellido</label>
+          <input type="text" id="inpApellido" required />
+        </div>
+        <div class="form-group">
+          <label>Correo</label>
+          <input type="email" id="inpCorreo" required />
+        </div>
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input type="password" id="inpPass" required />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Confirmar</button>
+          <button type="button" id="btnCancelAdd" class="btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- === MODAL : SUCCESS === -->
+  <div id="modalSuccess" class="modal hidden">
+    <div class="modal-content">
+      <h3>¡Registrado con éxito!</h3>
+      <button id="btnSuccessOk" class="btn-primary">OK</button>
+    </div>
+  </div>
+  
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

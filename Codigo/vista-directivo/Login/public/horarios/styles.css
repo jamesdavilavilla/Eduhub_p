@@ -29,14 +29,22 @@ body.dark-mode{
     --user-bg-color: #FAFAFC;
 }
 /* Body */
+/* Fondo uniforme para todo el body */
 body {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--color-bg);
-    transition: color 0.5s ease,
-    background-color 0.3s ease,left 0.5s ease;
-}
+    background-color: var(--color-bg); /* Fondo homogéneo */
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  /* Fondo del contenedor principal de la interfaz */
+  #interface {
+    background-color: var(--color-bg); /* Asegura el mismo fondo en toda la página */
+    min-height: 100vh;
+    padding-bottom: 10rem; /* Agregamos un poco de padding para evitar que el contenido quede pegado al borde */
+  }
 /* Sidebar */
 .sidebar{
     position: fixed;
@@ -497,6 +505,48 @@ body {
     margin-left: 200px; /* aumentá o disminuí según lo que necesites */
 }
 
+/* Estilo para el botón de modo oscuro */
+.dark-mode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--color-bg);
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Cambio cuando el scroll pasa cierta cantidad */
+  .scroll .dark-mode-btn {
+    position: fixed;
+    bottom: 20px; /* Cambiar posición si es necesario */
+    right: 20px;
+    animation: slideInUp 0.5s ease-out forwards;
+  }
+  
+  /* Animación para el movimiento */
+  @keyframes slideInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Para cuando la página está en la parte inferior */
+  body.scrolled .dark-mode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     .navigation .n1 {
@@ -522,317 +572,109 @@ body {
       height: 30px;
     }
   }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f4f4f4;
+  .comunicados-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow-border);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+        /* Animación para el modal */
+        @keyframes modal-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.container {
-  padding: 20px;
-  display: flex;
-  justify-content: flex-end;
-}
+        /* Animación de salida para el modal */
+        @keyframes modal-out {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+        }
 
+        /* Estilos para el modal */
+        .modal-post {
+            display: none; /* El modal está oculto por defecto */
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: modal-in 0.3s ease-out forwards;
+        }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        .modal-post.hide {
+            animation: modal-out 0.3s ease-in forwards;
+        }
 
-:root {
-  --color-bg: #EBECF2;
-  --color-surface: #FFFFFF;
-  --color-border: #9A9EB2;
-  --color-text-primary: #000;
-  --color-text-secondary: #3F435D;
-  --color-tooltip-bg: #2A2E33;
-  --color-tooltip-text: #fff;
-  --shadow-border: rgba(0, 0, 0, 0.1);
-  --user-bg-color: #FAFAFC;
-
-  --bg: #ffffff;
-  --text: #000000;
-  --table-header: #eee;
-  --badge-bg: #a0f7a0;
-  --badge-text: #0c660c;
-  --modal-bg: rgba(0, 0, 0, 0.4);
-}
-
-body.dark-mode {
-  --color-bg: #3A3D4D;
-  --color-surface: #12141A;
-  --color-border: #2B2D3B;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #9CA2B8;
-  --color-tooltip-bg: #fff;
-  --color-tooltip-text: #000;
-  --shadow-border: rgba(255, 255, 255, 0.1);
-
-  --bg: #1e1e2f;
-  --text: #f0f0f0;
-  --table-header: #2b2b3c;
-}
-
-/* GLOBAL STYLES */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  transition: color 0.5s ease, background-color 0.3s ease;
-}
-
-/* BOTÓN AGREGAR */
-.container {
-  padding: 20px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-button.btn-agregar {
-  background-color: #3f51b5;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-
-button.btn-agregar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
-/* Botón editar */
-.btn-editar {
-  background-color: #28a745;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-editar:hover {
-  background-color: #218838;
-}
-
-/* Botón eliminar */
-.btn-eliminar {
-  background-color: #dc3545;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-eliminar:hover {
-  background-color: #c82333;
-}
-
-/* TABLA */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: var(--color-surface);
-}
-
-thead tr {
-  background-color: var(--table-header);
-  text-align: left;
-}
-
-th, td {
-  padding: 12px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* BADGE */
-.badge {
-  background-color: var(--badge-bg);
-  color: var(--badge-text);
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-/* BOTONES DE ACCIÓN */
-.btn-editar {
-  background-color: #3f80ff;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.btn-eliminar {
-  background-color: #ff3f3f;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: var(--modal-bg);
-  animation: fadeIn 0.3s ease forwards;
-}
-
-.modal-content {
-  background-color: var(--color-surface);
-  margin: auto;
-  padding: 20px;
-  border: 1px solid var(--color-border);
-  width: 400px;
-  border-radius: 5px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.modal.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease forwards;
-}
+  /* Animación para mostrar el modal */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideIn {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.close:hover {
-  color: #000;
-}
-
-
-/* FORMULARIOS */
-form label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-form input, form select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .container {
-    justify-content: center;
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
-
-  table {
-    font-size: 14px;
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
   }
-
-  .modal-content {
-    width: 90%;
+  
+  .modal-post {
+    animation: fadeIn 0.3s ease-out forwards;
   }
-}
-
-/* Modo oscuro */
-body.dark-mode {
-    background-color: #12141A;
-    color: #fff;
-}
-
-/* Cambio de fondo de la sección */
-body.dark-mode .aulas-section {
-    background-color: #1e2328;
-}
-
-/* Cambios en la tabla */
-body.dark-mode .aulas-table {
-    background: #333;
-}
-
-body.dark-mode .aulas-table th {
-    background-color: #444;
-}
-
-body.dark-mode .aulas-table th, body.dark-mode .aulas-table td {
-    color: #ccc;
-    border-color: #555;
-}
-
-/* Botones en el modo oscuro */
-body.dark-mode .btn-table {
-    background-color: #6477DB;
-}
-
-body.dark-mode .btn-table:hover {
-    background-color: #4e5fc9;
-}
-
-body.dark-mode .modal-content {
-    background: #222;
-    color: #fff;
-}
-
-body.dark-mode .btn.confirm {
-    background-color: #6477DB;
-}
-
-body.dark-mode .btn.cancel {
-    background-color: #444;
-    color: #fff;
-}
-
-body.dark-mode .btn-agregar {
-    background-color: #2bb673;
-}
-
-body.dark-mode .btn-agregar:hover {
-    background-color: #239c61;
-}
-
-body.dark-mode .btn-delete {
-    background-color: #e74c3c;
-}
-
-body.dark-mode .btn-delete:hover {
-    background-color: #c0392b;
-}
-
+  
+  .modal-post.hidden {
+    animation: fadeOut 0.3s ease-out forwards;
+  }
+  
+  /* Animación para los posts */
+  @keyframes slideInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .comunicados-wrapper > div {
+    animation: slideInUp 0.5s ease-out forwards;
+  }
+  
+  /* Opciones de transición suaves para el modal y otros elementos */
+  .modal-post,
+  .comunicados-wrapper > div {
+    transition: all 0.3s ease;
+  }
+  
   /* === DARK MODE TOGGLE BUTTON === */
   .dark-toggle {
     position: fixed;
@@ -854,4 +696,77 @@ body.dark-mode .btn-delete:hover {
     background: #333;
     color: #fff;
   }
-  
+
+
+
+.schedule-controls {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+}
+.schedule-btn {
+    padding: 10px 20px;
+    background-color: #2A2E33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.schedule-btn:hover {
+    background-color: #3F435D;
+}
+.schedule-container {
+    width: 100%;
+    overflow-x: auto;
+}
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(5, 2fr);
+    gap: 5px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.schedule-header {
+    display: contents;
+    font-weight: bold;
+}
+.schedule-header div {
+    padding: 10px;
+    text-align: center;
+    background-color: #E0E0E0;
+}
+.time-column {
+    grid-column: 1;
+    padding: 10px;
+    background-color: #F5F5F5;
+    text-align: right;
+}
+.schedule-row {
+    display: contents;
+}
+.schedule-item {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.red { background-color: #FF6B6B; color: white; }
+.green { background-color: #4CAF50; color: white; }
+.purple { background-color: #9C27B0; color: white; }
+.teal { background-color: #00BCD4; color: white; }
+.orange { background-color: #FF9800; color: white; }
+.yellow { background-color: #FFC107; color: white; }
+.gray { background-color: #9E9E9E; color: white; }
+.pink { background-color: #E91E63; color: white; }
+.schedule-item.empty {
+    background-color: transparent;
+    border: none;
+}
+
+.register-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}

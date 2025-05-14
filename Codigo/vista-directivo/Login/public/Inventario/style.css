@@ -535,6 +535,66 @@ body {
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-bg: #EBECF2;
+  --color-surface: #FFFFFF;
+  --color-border: #9A9EB2;
+  --color-text-primary: #000;
+  --color-text-secondary: #3F435D;
+  --color-tooltip-bg: #2A2E33;
+  --color-tooltip-text: #fff;
+  --shadow-border: rgba(0, 0, 0, 0.1);
+  --user-bg-color: #FAFAFC;
+
+  --bg: #ffffff;
+  --text: #000000;
+  --table-header: #eee;
+  --badge-bg: #a0f7a0;
+  --badge-text: #0c660c;
+  --modal-bg: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode {
+  --color-bg: #3A3D4D;
+  --color-surface: #12141A;
+  --color-border: #2B2D3B;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9CA2B8;
+  --color-tooltip-bg: #fff;
+  --color-tooltip-text: #000;
+  --shadow-border: rgba(255, 255, 255, 0.1);
+
+  --bg: #1e1e2f;
+  --text: #f0f0f0;
+  --table-header: #2b2b3c;
+}
+
+/* GLOBAL STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: color 0.5s ease, background-color 0.3s ease;
+}
+
+/* BOTÓN AGREGAR */
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 button.btn-agregar {
   background-color: #3f51b5;
   color: white;
@@ -545,30 +605,68 @@ button.btn-agregar {
   cursor: pointer;
 }
 
+
+button.btn-agregar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+/* Botón editar */
+.btn-editar {
+  background-color: #28a745;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: #218838;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}
+
+/* TABLA */
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background-color: var(--color-surface);
 }
 
 thead tr {
-  background-color: #eee;
+  background-color: var(--table-header);
   text-align: left;
 }
 
 th, td {
   padding: 12px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-border);
 }
 
+/* BADGE */
 .badge {
-  background-color: #a0f7a0;
-  color: #0c660c;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
   padding: 5px 10px;
   border-radius: 20px;
   font-weight: bold;
 }
 
+/* BOTONES DE ACCIÓN */
 .btn-editar {
   background-color: #3f80ff;
   color: white;
@@ -588,6 +686,7 @@ th, td {
   cursor: pointer;
 }
 
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -598,14 +697,15 @@ th, td {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--modal-bg);
+  animation: fadeIn 0.3s ease forwards;
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: var(--color-surface);
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--color-border);
   width: 400px;
   border-radius: 5px;
 }
@@ -618,6 +718,27 @@ th, td {
   cursor: pointer;
 }
 
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.close:hover {
+  color: #000;
+}
+
+
+/* FORMULARIOS */
 form label {
   display: block;
   margin-top: 10px;
@@ -633,6 +754,20 @@ form input, form select {
   border: 1px solid #ccc;
 }
 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
 
 /* Modo oscuro */
 body.dark-mode {

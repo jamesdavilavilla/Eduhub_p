@@ -92,7 +92,7 @@ app.post("/auth", async (req, res) => {
                 req.session.name = result[0].user;
 
                 // ✅ Redirige correctamente al dashboard
-                res.redirect('/resources/dashboard/index_dashboard.html');
+            //    res.redirect('/resources/dashboard/index_dashboard.html');
             }
         });
     } else {
@@ -107,6 +107,21 @@ app.post("/auth", async (req, res) => {
         });
     }
 });
+
+
+app.get("/resources/dashboard/index_dashboard.html", (req, res)=>{
+    if(req.session.loggedin){
+        res.render("index_dashboard", {
+        login : true,
+        name: req.session.name
+    });
+    }else{
+        res.render("index_dashboard", {
+            login: false,
+            name: "debe iniciar sesión"
+        })
+    }
+})
 
 // Iniciar servidor
 app.listen(4000, () => {

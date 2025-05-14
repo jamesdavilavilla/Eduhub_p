@@ -64,3 +64,33 @@ function checkWindowsSize(){
 }
 checkWindowsSize();
 window.addEventListener('resize',checkWindowsSize);
+document.addEventListener("DOMContentLoaded", () => {
+    const tarjetas = [
+      { valor: 7, texto: "Roles registrados", color: "#a0b4d6", icon: "bx bx-book-bookmark" },
+      { valor: 62, texto: "Usuarios registrados", color: "#93c5c0", icon: "bx bx-user" },
+      { valor: 3, texto: "Usuarios registrados", color: "#91d2b4", icon: "bx bx-grid-alt" },
+      { valor: 12, texto: "Usuarios registrados", color: "#f2c087", icon: "bx bx-menu" },
+      { valor: 5, texto: "Materias registradas", color: "#e38989", icon: "bx bx-notepad" },
+      { valor: 0, texto: "Administrativos registrados", color: "#f4f4f4", icon: "bx bx-group" },
+      { valor: 25, texto: "Docentes registrados", color: "#999", icon: "bx bx-id-card" },
+      { valor: 56, texto: "Estudiantes registrados", color: "#8baee8", icon: "bx bx-user-circle" }
+    ];
+  
+    const contenedor = document.getElementById("cards-dashboard");
+  
+    tarjetas.forEach((t) => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.style.backgroundColor = t.color;
+  
+      card.innerHTML = `
+        <i class="${t.icon}"></i>
+        <h3>${t.valor}</h3>
+        <p>${t.texto}</p>
+        <button>Más información</button>
+      `;
+  
+      contenedor.appendChild(card);
+    });
+  });
+  

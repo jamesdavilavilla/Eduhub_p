@@ -92,7 +92,7 @@ app.post("/auth", async (req, res) => {
                 req.session.name = result[0].user;
 
                 // ✅ Redirige correctamente al dashboard
-            //    res.redirect('/resources/dashboard/index_dashboard.html');
+                res.redirect('/resources/dashboard/index_dashboard.html');
             }
         });
     } else {
@@ -126,4 +126,11 @@ app.get("/resources/dashboard/index_dashboard.html", (req, res)=>{
 // Iniciar servidor
 app.listen(4000, () => {
     console.log("server running at http://localhost:4000");
+});
+
+
+app.get('/logout', (req, res)=>{
+    req.session.destroy(()=>{
+        res.redirect('/')
+    })
 });

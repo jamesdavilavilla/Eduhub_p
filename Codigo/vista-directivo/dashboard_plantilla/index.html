@@ -185,12 +185,19 @@
                 <a href="#">Más información</a>
                 <button id="decrease-students">-</button>
                 <button id="increase-students">+</button>
+            <div class="user-icon" onclick="logout()">
+  <i class='bx bx-exit'></i>
+</div>
             </div>
          
         </div>
         </section>
         
         </section>
-        
+        <script>
+  function logout() {
+    window.location.href = '/logout'; // Ruta que destruye la sesión
+  }
+</script>
 </body>
 </html>
